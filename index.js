@@ -24,7 +24,8 @@ module.exports = function(data) {
 
 		var date = new Date(file.time.epoch * 1000);
 		var year = date.getFullYear().toString();
-		var month = date.getMonth() < 10 ? '0' + date.getMonth().toString() : date.getMonth().toString();
+		var month = date.getMonth() + 1;
+		var month = month < 10 ? '0' + month.toString() : month.toString();
 
 		file.path = path.join(file.base, year, month, file.relative);
 
