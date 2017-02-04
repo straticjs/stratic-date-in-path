@@ -1,5 +1,7 @@
 # `stratic-date-in-path`
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/straticjs/stratic-date-in-path.svg)](https://greenkeeper.io/)
+
 [Gulp][1] plugin to take a Vinyl file with [Stratic][2] post information (for example, something that's been parsed with [`stratic-parse-header`][3]) and make the file path include the year and month, as is typical in blog engines.
 
 ## Installation
