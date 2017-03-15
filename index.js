@@ -22,7 +22,7 @@ module.exports = function(data) {
 	return through2.obj(function(file, enc, callback) {
 		var that = this;
 
-		var date = new Date(file.time.epoch * 1000);
+		var date = new Date(file.data.time.epoch * 1000);
 		var year = date.getFullYear().toString();
 		var month = date.getMonth() + 1;
 		month = month < 10 ? '0' + month.toString() : month.toString();
