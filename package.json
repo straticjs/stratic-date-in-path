@@ -1,6 +1,6 @@
 {
   "name": "stratic-date-in-path",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Make a Vinyl file's path include the date based on Stratic metadata",
   "main": "index.js",
   "dependencies": {
