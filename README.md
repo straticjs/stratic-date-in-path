@@ -1,6 +1,6 @@
 # `stratic-date-in-path`
 
-[Gulp][1] plugin to take a Vinyl file with [Stratic][2] post information (for example, something that's been parsed with [`stratic-parse-header`][3]) and make the file path include the year and month, as is typical in blog engines.
+[Gulp][1] plugin to take a Vinyl file with [Stratic][2] post information (for example, something that's had YAML frontmatter parsed with [`gulp-gray-matter`][3]) and make the file path include the year and month, as is typical in blog engines.
 
 ## Installation
 
@@ -12,12 +12,12 @@
 
 ```js
 var gulp = require('gulp')
-var straticParseHeader = require('stratic-parse-header');
+var frontMatter = require('gulp-gray-matter');
 var straticDateInPath = require('stratic-date-in-path');
 
-gulp.task('parse', function() {
+gulp.task('posts', function() {
     gulp.src('*.md')
-        .pipe(straticParseHeader())
+        .pipe(frontMatter())
         .pipe(straticDateInPath());
 });
 ```
@@ -40,6 +40,6 @@ Alex Jordan <alex@strugee.net>
 
  [1]: http://gulpjs.com/
  [2]: https://github.com/strugee/generator-stratic
- [3]: https://npmjs.com/package/stratic-parse-header
+ [3]: https://npmjs.com/package/gulp-gray-matter
  [4]: http://contributor-covenant.org/
  [5]: https://github.com/straticjs/stratic-date-in-path/blob/master/CODE_OF_CONDUCT.md
