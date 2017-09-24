@@ -16,7 +16,7 @@
 
 ## 2.0.0 - 2016-05-28
 
-### Fixed
+### Breaking
 
 * Fix an off-by-one error where January would result in a path with '00', February would be '01', etc.
 
