@@ -2,6 +2,12 @@
 
 `stratic-date-in-path` follows [Semantic Versioning][1].
 
+## 4.0.0 - 2017-09-24
+
+### Breaking
+
+* Fix the UTC offset not being taken account, which could potentially cause computed times to drift across day boundaries
+
 ## 3.0.0 - 2017-03-14
 
 ### Breaking
