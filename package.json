@@ -4,6 +4,7 @@
   "description": "Make a Vinyl file's path include the date based on Stratic metadata",
   "main": "index.js",
   "dependencies": {
+    "moment": "^2.18.1",
     "through2": "^2.0.0"
   },
   "scripts": {

@@ -16,15 +16,19 @@
 'use strict';
 
 var through2 = require('through2');
+var moment = require('moment');
 var path = require('path');
 
 module.exports = function(data) {
 	return through2.obj(function(file, enc, callback) {
 		var that = this;
 
-		var date = new Date(file.data.time.epoch * 1000);
-		var year = date.getFullYear().toString();
-		var month = date.getMonth() + 1;
+		var date = moment.unix(file.data.time.epoch);
+		var offset = Number(file.data.time.utcoffset.slice(3));
+		date.utcOffset(offset);
+
+		var year = date.year().toString();
+		var month = date.month() + 1;
 		month = month < 10 ? '0' + month.toString() : month.toString();
 
 		file.path = path.join(file.base, year, month, file.relative);
