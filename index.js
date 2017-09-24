@@ -21,8 +21,6 @@ var path = require('path');
 
 module.exports = function(data) {
 	return through2.obj(function(file, enc, callback) {
-		var that = this;
-
 		var date = moment.unix(file.data.time.epoch);
 		var offset = Number(file.data.time.utcoffset.slice(3));
 		date.utcOffset(offset);
@@ -33,7 +31,7 @@ module.exports = function(data) {
 
 		file.path = path.join(file.base, year, month, file.relative);
 
-		that.push(file);
+		this.push(file);
 		callback();
 	});
 };
