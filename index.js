@@ -16,14 +16,12 @@
 'use strict';
 
 var through2 = require('through2');
-var moment = require('moment');
+var handleOffset = require('stratic-handle-offset');
 var path = require('path');
 
 module.exports = function(data) {
 	return through2.obj(function(file, enc, callback) {
-		var date = moment.unix(file.data.time.epoch);
-		var offset = Number(file.data.time.utcoffset.slice(3));
-		date.utcOffset(offset);
+		var date = handleOffset(file.data.time);
 
 		var year = date.year().toString();
 		var month = date.month() + 1;
