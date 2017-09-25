@@ -2,6 +2,12 @@
 
 `stratic-date-in-path` follows [Semantic Versioning][1].
 
+## 4.1.0 - 2017-09-24
+
+### Changed
+
+* Factored out offset logic into stratic-handle-offset
+
 ## 4.0.0 - 2017-09-24
 
 ### Breaking
